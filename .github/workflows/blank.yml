@@ -5,18 +5,23 @@ on:
   pull_request:
     branches: [ "main" ]
 
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
   job1:
+    name: job1
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash    
     steps:
-      - uses: actions/checkout@v1
+      - name: checkout
+        uses: actions/checkout@v1
 
-      - run: mkdir -p lalala
+      - name: folder-create
+        run: mkdir -p lalala
 
-      - run: echo "hello" > lalala/world.txt
+      - name: echo
+        run: echo "hello" > lalala/world.txt
 
       - uses: actions/upload-artifact@master
         with:
@@ -24,16 +29,25 @@ jobs:
         path: lalala
 
   job2:
+    name: job2
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash    
+  
     steps:
-    - uses: actions/checkout@master
+    - name: lala
+      uses: actions/checkout@master
 
-    - uses: actions/download-artifact@master
+    - name: lele
+      uses: actions/download-artifact@master
       with:
         name: my-artifact
         path: lalala
     
-        - run: cat lalala/world.txt  
+    - name: cat_file
+      run: cat lalala/world.txt
   
 
-
+#https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
 
