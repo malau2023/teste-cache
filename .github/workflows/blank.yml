@@ -1,4 +1,4 @@
-name: CI
+name: Testa-Artefatos na cache
 on:
   push:
     branches: [ "main" , "lalala"]
@@ -27,7 +27,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: lalala
+          path: lalala/*.*
           retention-days: 3
 
   job2:
