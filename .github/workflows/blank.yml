@@ -21,7 +21,7 @@ jobs:
         run: mkdir -p lalala
 
       - name: echo
-        run: echo hello > lalala/world.txt
+        run: echo hello > lalala/world1.txt
 
       - name: archive artifact
         uses: actions/upload-artifact@v3
