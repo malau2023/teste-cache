@@ -47,8 +47,8 @@ jobs:
         name: my-artifact
         
     - name: cat_file
-      run: ls -lh -t ; ls lalala
-  
+      run: ls -lh -t 
+      run: cat world1.txt
 
 #https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
 
