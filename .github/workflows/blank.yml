@@ -18,16 +18,16 @@ jobs:
         uses: actions/checkout@v1
 
       - name: folder-create
-        run: mkdir -p lalala
+        run: mkdir -p lalale
 
       - name: echo
-        run: echo hello > lalala/world2.txt
+        run: echo hello > lalale/world2.txt
 
       - name: archive artifact
         uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: lalala/*.*
+          path: lalale/*.*
           retention-days: 3
 
   job2:
