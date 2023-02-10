@@ -21,7 +21,7 @@ jobs:
         run: mkdir -p lalala
 
       - name: echo
-        run: echo hello > lalala/world1.txt
+        run: echo hello > lalala/world2.txt
 
       - name: archive artifact
         uses: actions/upload-artifact@v3
@@ -48,7 +48,7 @@ jobs:
         
     - name: cat_file
       run: ls -lh -t 
-      run: cat world1.txt
+      run: cat world2.txt
 
 #https://stackoverflow.com/questions/57498605/github-actions-share-workspace-artifacts-between-jobs
 
