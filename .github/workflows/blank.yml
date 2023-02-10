@@ -23,10 +23,12 @@ jobs:
       - name: echo
         run: echo hello > lalala/world.txt
 
-      - uses: actions/upload-artifact@master
+      - name: archive artifact
+        uses: actions/upload-artifact@v3
         with:
           name: my-artifact
           path: lalala
+          retention-days: 3
 
   job2:
     name: job2
@@ -40,11 +42,10 @@ jobs:
       uses: actions/checkout@master
 
     - name: lele
-      uses: actions/download-artifact@master
+      uses: actions/download-artifact@v3
       with:
         name: my-artifact
-        path: lalala
-    
+        
     - name: cat_file
       run: cat lalala/world.txt
   
